@@ -1,0 +1,35 @@
+.stMarkdown h1, .main .element-container.css-o7ulmj.e1tzin5v3 {
+    text-align: right;
+}
+.stMarkdown div.css-nlntq9.e16nr0p33 {
+    font-weight: bold;
+}
+textarea {
+    direction: rtl;
+    height: 140px;
+}
+.stTextArea .css-qrbaxs {
+    float: right;
+    font-size: 23px;
+}
+h1 {
+    font-family: 'Scheherazade', serif;
+}
+.main div.css-nlntq9.e16nr0p33 > p {
+    direction: rtl;
+}
+.main .stMarkdown div.css-nlntq9 p {
+    font-size: 22px;
+}
+.main .stMarkdown div.css-nlntq9 {
+    direction: rtl;
+}
+.main p, .main div, .main input, .main label {
+  text-align: right;
+  direction: rtl;
+}
+
+}
+.main button {
+    font-size: 22px;
+}
