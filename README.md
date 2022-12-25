@@ -48,8 +48,11 @@ Letters, diacritics, and additional symbols such as numbers and punctuation mark
 
 ![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Various-diacritics-for-Arabic-characters.png)
 
+A problem arises in writing the Arabic language with numbers, because most of them write it with English numbers
 
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/png.png)
 
+There are several problems in Arabic language texts that are not present other than in Arabic texts such as Twill and Folders and we will offer to solve them after **Arabic encoding** .
 ### 1.3.2 - Arabic encoding
 ### 1.3.3 - Arabic language challenges
 
