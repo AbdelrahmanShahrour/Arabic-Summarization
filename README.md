@@ -29,12 +29,31 @@ Natural Language Understanding (NLU) and Natural Language Generation (NLG).
 ## [Bibliography : Sentiment Analysis and Opinion Mining ](https://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf)
 
 1.2.2.4 - Summarization: It is the process of conveying the most important information from a source (or sources) to produce a condensed version. This task took advantage of the NLP to reformulate the generated summary into a more coherent text.
-## [Bibliography : Sentiment Analysis and Opinion Mining ](https://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf)
 
 ## 1.3 - Arabic language and its challenges
+The Arabic language is an important language as it is the language of the Holy "Al Qur’an Al Karem" and one of the official languages in the United Nations and 24 countries and as it is the mother tongue of more than 460 million people.
 ### 1.3.1 - Arabic language
+Before getting into the depth of the Arabic language, we will first introduce the language.
+
+Arabic is the most widely spoken Semitic language, and it is the natively spoken medium of communication for everyday life. However, the term “Arabic language” is frequently used to refer to Modern Standard Arabic (MSA) and its dialects as a whole. The media and education use MSA as their primary written language [34]. Arabic is written from right to left using the 28-character Arabic alphabet. It is written in a cursive way, And the shape of each letter changes according to its position at the beginning of the word. middle, or end, but it does not contain capital letters. As for vowels, it can be said that They are two types: long letters and diacritics.
+
+Before getting into the depth of the Arabic language, we will first introduce the language.
+Arabic is the most widely spoken Semitic language, and it is the natively spoken medium of communication for everyday life. However, the term “Arabic language” is frequently used to refer to Modern Standard Arabic (MSA) and its dialects as a whole. The media and education use MSA as their primary written language. Arabic is written from right to left using the 28-character Arabic alphabet. It is written in a cursive way, And the shape of each letter changes according to its position at the beginning of the word. middle, or end, but it does not contain capital letters. As for vowels, it can be said that They are two types: long letters and diacritics.
+### [Bibliography : Modern Standard Arabic](https://en.wikipedia.org/wiki/Modern_Standard_Arabic)
+Although the Arabic language is considered to be in a situation similar to other languages, such as the English language, and there are many dialects in it, but the Arabic language has a different status because it has introduced other languages such as Persian, Berber, African, and Samaritan, and this is what made the Arabic language significantly different from its dialects
+In Arabic texts there are two types of symbols:
+Letters, diacritics, and additional symbols such as numbers and punctuation marks
+
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/THE-ARABIC-ALPHABET-IN-DIFFERENT-POSITIONS_Q640.jpg)
+
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Various-diacritics-for-Arabic-characters.png)
+
+
+
 ### 1.3.2 - Arabic encoding
 ### 1.3.3 - Arabic language challenges
+
+## [Bibliography : Arabic text summarization approaches: A comparison study](https://www.researchgate.net/profile/Hani-Alghanem/publication/348163080_Arabic_text_summarization_approaches_A_comparison_study/links/5ff187a6a6fdccdcb826718e/Arabic-text-summarization-approaches-A-comparison-study.pdf)
 
 ## 1.4 - Text Summarization
 ### 1.4.1 - Manual summarization
