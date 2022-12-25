@@ -1148,11 +1148,33 @@ class Cleaner:
 ### 1.4.1 - Manual summarization
 ![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/man-summ.png)
 ### 1.4.2 - Automatic summarization
-### 1.4.2.1 - Automatic text summarization aspects
-### 1.4.2.2 - Automatic text summarization approaches
-#### 1.4.2.2.1 - Extractive summarization
-#### 1.4.2.2.2 - Abstractive summarization
+Automatic text summarization is a type of natural language processing in which a machine is given a task to analyze, comprehend, and use human language to generate a summary. The type of summary results is determined by a number of aspects, the most well-known of which are extractive and abstractive, both of which have advantages and drawbacks.
 
+Automatic Text Summarization can be done in a variety of ways, but we will focus on two of them: extraction-based and abstraction-based summarization.
+
+#### 1.4.2.1 - Extractive summarization
+An extractive summary consists of relevant sentences selected from documents that cover the main contents without any modification on them. These sentences are selected based on statistical and linguistical features. According to these features, a score of importance is given to each sentence. Only those with higher scores will be chosen to represent the final summary and will be organized in the same order they were in the original text. The facility of implementing such a process is that it does not need deep text understanding.
+
+**Advantages of extractive summarization**
+
+The extractive approach may give an effective and efficient summary. This type of summarization is easy to compute because it does not handle semantics. 
+This technique extracts sentences directly, thus, scores a higher accuracy. 
+Besides, the gist is conveyed to the summary with the same terms used in the source text.
+ So, the reader does not have to worry about the misinterpretation of the text.
+
+**Disadvantages of extractive summarization**
+
+The extracted sentences are often long, which makes it more likely that irrelevant information will also be included in the summary, which consumes space. 
+Extractive summaries cannot capture all important information because it is often disseminated via sentences. 
+Therefore, not much accurate information was provided. 
+This extraction often leads to higher incoherence in the summary sentences, endures from inconsistencies and lack of balance. 
+Since this technique extracts the sentences as they are, there is a high possibility that the pronouns lose their references. In addition, these types of summaries are less readablees.
+
+#### 1.4.2.2 - Abstractive summarization
+
+
+## [Bibliography : A survey on existing extractive techniques for query-based text summarization](https://ieeexplore.ieee.org/abstract/document/7377323)
+## [Bibliography : Abstractive Document Summarization via Neural Model with Joint Attention](https://link.springer.com/chapter/10.1007/978-3-319-73618-1_28)
 ## 1.5 - Related works
 ### 1.5.1 - Before the emergence of BERT
 ### 1.5.1 - Usage of BERT after its emergence
