@@ -69,7 +69,1078 @@ The Unicode was a brave attempt to create a single character set that could repr
 ![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Comparing%20the%20correct%20and%20incorrect%20decoding%20of%20various%20Arabic%20encodings.png)
 
 [Bibliography : Introduction to Arabic Natural Language Processing](https://feng.stafpu.bu.edu.eg/Electrical%20Engineering/3064/crs-12176/Files/Introduction%20to%20Arabic%20Natural%20Language%20Processing.pdf)
-### 1.3.3 - Arabic language challenges
+### 1.3.3 - PyShbak
+
+## ar.py
+```python
+### =================>| arabic |<================= ###
+ARABIC_CHARS = "دجحإﻹﻷأآﻵخهعغفقثصضذطكمنتالبيسشظزوةىﻻرؤءئ "
+ARABIC_PUNCTUATION = ':"؟!؛،,.؍, '
+ARABIC_NUM = "٠١٢٣٤٥٦٧٨٩ "
+HARAKAT_MAIN = [
+    "\u064b",  #  ً
+    "\u064c",  #  ٌ
+    "\u064d",  #  ٍ
+    "\u064e",  #  َ
+    "\u064f",  #  ُ
+    "\u0650",  #  ِ
+    "\u0651",  #  ّ
+    "\u0652",  #  ْ
+]
+TANWEEN = HARAKAT_MAIN[0]
+ALEF_CHARS = "إأٱآا" + "\u0670"
+NORMAL_ALEF = "ا"
+TAH_MARBOTA = "ة"
+HA = "ه"
+ALEF_MAKSORA = "ى"
+YA = "ي"
+HAMZA_CHARS = "ءؤئ" + "\u0655\u0656"  # Arabic Hamza Above and Below
+NORMAL_HAMZA = "ء"
+LAM_ALEF_COMBINED = [
+    "\ufefb",  # ﻻ
+    "\ufef7",  # ﻷ
+    "\ufef9",  # ﻹ
+    "\ufef5",  # ﻵ
+]
+LAM_ALEF_NORMAL = "\u0644\u0627"  # ﻻ
+
+HARAKAT_OTHERS = [
+    "\u0653",  #  ٓ
+    "\u0654",  #  ٔ
+    "\u0655",  #  ٕ
+    "\u0656",  # ٖ
+    "\u0657",  # ٗٗ 
+    "\u0658",  # ٘
+    "\u0659",  # ٙ 
+    "\u065A",  #  ٚ
+    "\u065B",  # ٛ 
+    "\u065C",  # ٜ 
+    "\u065D",  # ٝ 
+    "\u065E",  # ٞ 
+    "\u065F",  # ٟ 
+    "\u0670",  #  ٰ   
+]
+
+HARAKAT = HARAKAT_MAIN + HARAKAT_OTHERS
+TATWEEL = "\u0640"  # ـ
+HONORIFIC_SIGN = [
+    "\u0610",  # ؐ  
+    "\u0611",  # ؑ 
+    "\u0612",  # ؒ  
+    "\u0613",  # ؓ  
+    "\u0614",  # ؔ  
+]
+TATWEEL = "\u0640"  # ـ
+```
+## en.py
+```python
+ENGLISH_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+ENGLISH_PUNCTUATION = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+ENGLISH_NUM = "0123456789"
+```
+## general.py
+```python
+import nltk
+
+### =================>| General |<================= ###
+
+OTHER_PUNCTUATION = [
+    "\xa1",
+    "\xa7",
+    "\xab",
+    "\xb6",
+    "\xb7",
+    "\xbb",
+    "\xbf",
+    "\u037e",
+    "\u0387",
+    "\u055a",
+    "\u055b",
+    "\u055c",
+    "\u055d",
+    "\u055e",
+    "\u055f",
+    "\u0589",
+    "\u058a",
+    "\u05be",
+    "\u05c0",
+    "\u05c3",
+    "\u05c6",
+    "\u05f3",
+    "\u05f4",
+    "\u0609",
+    "\u060a",
+    "\u061e",
+    "\u066a",
+    "\u066b",
+    "\u066c",
+    "\u066d",
+    "\u06d4",
+    "\u0700",
+    "\u0701",
+    "\u0702",
+    "\u0703",
+    "\u0704",
+    "\u0705",
+    "\u0706",
+    "\u0707",
+    "\u0708",
+    "\u0709",
+    "\u070a",
+    "\u070b",
+    "\u070c",
+    "\u070d",
+    "\u07f7",
+    "\u07f8",
+    "\u07f9",
+    "\u0830",
+    "\u0831",
+    "\u0832",
+    "\u0833",
+    "\u0834",
+    "\u0835",
+    "\u0836",
+    "\u0837",
+    "\u0838",
+    "\u0839",
+    "\u083a",
+    "\u083b",
+    "\u083c",
+    "\u083d",
+    "\u083e",
+    "\u085e",
+    "\u0964",
+    "\u0965",
+    "\u0970",
+    "\u09fd",
+    "\u0a76",
+    "\u0af0",
+    "\u0c77",
+    "\u0c84",
+    "\u0df4",
+    "\u0e4f",
+    "\u0e5a",
+    "\u0e5b",
+    "\u0f04",
+    "\u0f05",
+    "\u0f06",
+    "\u0f07",
+    "\u0f08",
+    "\u0f09",
+    "\u0f0a",
+    "\u0f0b",
+    "\u0f0c",
+    "\u0f0d",
+    "\u0f0e",
+    "\u0f0f",
+    "\u0f10",
+    "\u0f11",
+    "\u0f12",
+    "\u0f14",
+    "\u0f3a",
+    "\u0f3b",
+    "\u0f3c",
+    "\u0f3d",
+    "\u0f85",
+    "\u0fd0",
+    "\u0fd1",
+    "\u0fd2",
+    "\u0fd3",
+    "\u0fd4",
+    "\u0fd9",
+    "\u0fda",
+    "\u104a",
+    "\u104b",
+    "\u104c",
+    "\u104d",
+    "\u104e",
+    "\u104f",
+    "\u10fb",
+    "\u1360",
+    "\u1361",
+    "\u1362",
+    "\u1363",
+    "\u1364",
+    "\u1365",
+    "\u1366",
+    "\u1367",
+    "\u1368",
+    "\u1400",
+    "\u166e",
+    "\u169b",
+    "\u169c",
+    "\u16eb",
+    "\u16ec",
+    "\u16ed",
+    "\u1735",
+    "\u1736",
+    "\u17d4",
+    "\u17d5",
+    "\u17d6",
+    "\u17d8",
+    "\u17d9",
+    "\u17da",
+    "\u1800",
+    "\u1801",
+    "\u1802",
+    "\u1803",
+    "\u1804",
+    "\u1805",
+    "\u1806",
+    "\u1807",
+    "\u1808",
+    "\u1809",
+    "\u180a",
+    "\u1944",
+    "\u1945",
+    "\u1a1e",
+    "\u1a1f",
+    "\u1aa0",
+    "\u1aa1",
+    "\u1aa2",
+    "\u1aa3",
+    "\u1aa4",
+    "\u1aa5",
+    "\u1aa6",
+    "\u1aa8",
+    "\u1aa9",
+    "\u1aaa",
+    "\u1aab",
+    "\u1aac",
+    "\u1aad",
+    "\u1b5a",
+    "\u1b5b",
+    "\u1b5c",
+    "\u1b5d",
+    "\u1b5e",
+    "\u1b5f",
+    "\u1b60",
+    "\u1bfc",
+    "\u1bfd",
+    "\u1bfe",
+    "\u1bff",
+    "\u1c3b",
+    "\u1c3c",
+    "\u1c3d",
+    "\u1c3e",
+    "\u1c3f",
+    "\u1c7e",
+    "\u1c7f",
+    "\u1cc0",
+    "\u1cc1",
+    "\u1cc2",
+    "\u1cc3",
+    "\u1cc4",
+    "\u1cc5",
+    "\u1cc6",
+    "\u1cc7",
+    "\u1cd3",
+    "\u2010",
+    "\u2011",
+    "\u2012",
+    "\u2013",
+    "\u2014",
+    "\u2015",
+    "\u2016",
+    "\u2017",
+    "\u2018",
+    "\u2019",
+    "\u201a",
+    "\u201b",
+    "\u201c",
+    "\u201d",
+    "\u201e",
+    "\u201f",
+    "\u2020",
+    "\u2021",
+    "\u2022",
+    "\u2023",
+    "\u2024",
+    "\u2025",
+    "\u2026",
+    "\u2027",
+    "\u2030",
+    "\u2031",
+    "\u2032",
+    "\u2033",
+    "\u2034",
+    "\u2035",
+    "\u2036",
+    "\u2037",
+    "\u2038",
+    "\u2039",
+    "\u203a",
+    "\u203b",
+    "\u203c",
+    "\u203d",
+    "\u203e",
+    "\u203f",
+    "\u2040",
+    "\u2041",
+    "\u2042",
+    "\u2043",
+    "\u2045",
+    "\u2046",
+    "\u2047",
+    "\u2048",
+    "\u2049",
+    "\u204a",
+    "\u204b",
+    "\u204c",
+    "\u204d",
+    "\u204e",
+    "\u204f",
+    "\u2050",
+    "\u2051",
+    "\u2053",
+    "\u2054",
+    "\u2055",
+    "\u2056",
+    "\u2057",
+    "\u2058",
+    "\u2059",
+    "\u205a",
+    "\u205b",
+    "\u205c",
+    "\u205d",
+    "\u205e",
+    "\u207d",
+    "\u207e",
+    "\u208d",
+    "\u208e",
+    "\u2308",
+    "\u2309",
+    "\u230a",
+    "\u230b",
+    "\u2329",
+    "\u232a",
+    "\u2768",
+    "\u2769",
+    "\u276a",
+    "\u276b",
+    "\u276c",
+    "\u276d",
+    "\u276e",
+    "\u276f",
+    "\u2770",
+    "\u2771",
+    "\u2772",
+    "\u2773",
+    "\u2774",
+    "\u2775",
+    "\u27c5",
+    "\u27c6",
+    "\u27e6",
+    "\u27e7",
+    "\u27e8",
+    "\u27e9",
+    "\u27ea",
+    "\u27eb",
+    "\u27ec",
+    "\u27ed",
+    "\u27ee",
+    "\u27ef",
+    "\u2983",
+    "\u2984",
+    "\u2985",
+    "\u2986",
+    "\u2987",
+    "\u2988",
+    "\u2989",
+    "\u298a",
+    "\u298b",
+    "\u298c",
+    "\u298d",
+    "\u298e",
+    "\u298f",
+    "\u2990",
+    "\u2991",
+    "\u2992",
+    "\u2993",
+    "\u2994",
+    "\u2995",
+    "\u2996",
+    "\u2997",
+    "\u2998",
+    "\u29d8",
+    "\u29d9",
+    "\u29da",
+    "\u29db",
+    "\u29fc",
+    "\u29fd",
+    "\u2cf9",
+    "\u2cfa",
+    "\u2cfb",
+    "\u2cfc",
+    "\u2cfe",
+    "\u2cff",
+    "\u2d70",
+    "\u2e00",
+    "\u2e01",
+    "\u2e02",
+    "\u2e03",
+    "\u2e04",
+    "\u2e05",
+    "\u2e06",
+    "\u2e07",
+    "\u2e08",
+    "\u2e09",
+    "\u2e0a",
+    "\u2e0b",
+    "\u2e0c",
+    "\u2e0d",
+    "\u2e0e",
+    "\u2e0f",
+    "\u2e10",
+    "\u2e11",
+    "\u2e12",
+    "\u2e13",
+    "\u2e14",
+    "\u2e15",
+    "\u2e16",
+    "\u2e17",
+    "\u2e18",
+    "\u2e19",
+    "\u2e1a",
+    "\u2e1b",
+    "\u2e1c",
+    "\u2e1d",
+    "\u2e1e",
+    "\u2e1f",
+    "\u2e20",
+    "\u2e21",
+    "\u2e22",
+    "\u2e23",
+    "\u2e24",
+    "\u2e25",
+    "\u2e26",
+    "\u2e27",
+    "\u2e28",
+    "\u2e29",
+    "\u2e2a",
+    "\u2e2b",
+    "\u2e2c",
+    "\u2e2d",
+    "\u2e2e",
+    "\u2e30",
+    "\u2e31",
+    "\u2e32",
+    "\u2e33",
+    "\u2e34",
+    "\u2e35",
+    "\u2e36",
+    "\u2e37",
+    "\u2e38",
+    "\u2e39",
+    "\u2e3a",
+    "\u2e3b",
+    "\u2e3c",
+    "\u2e3d",
+    "\u2e3e",
+    "\u2e3f",
+    "\u2e40",
+    "\u2e41",
+    "\u2e42",
+    "\u2e43",
+    "\u2e44",
+    "\u2e45",
+    "\u2e46",
+    "\u2e47",
+    "\u2e48",
+    "\u2e49",
+    "\u2e4a",
+    "\u2e4b",
+    "\u2e4c",
+    "\u2e4d",
+    "\u2e4e",
+    "\u2e4f",
+    "\u3001",
+    "\u3002",
+    "\u3003",
+    "\u3008",
+    "\u3009",
+    "\u300a",
+    "\u300b",
+    "\u300c",
+    "\u300d",
+    "\u300e",
+    "\u300f",
+    "\u3010",
+    "\u3011",
+    "\u3014",
+    "\u3015",
+    "\u3016",
+    "\u3017",
+    "\u3018",
+    "\u3019",
+    "\u301a",
+    "\u301b",
+    "\u301c",
+    "\u301d",
+    "\u301e",
+    "\u301f",
+    "\u3030",
+    "\u303d",
+    "\u30a0",
+    "\u30fb",
+    "\ua4fe",
+    "\ua4ff",
+    "\ua60d",
+    "\ua60e",
+    "\ua60f",
+    "\ua673",
+    "\ua67e",
+    "\ua6f2",
+    "\ua6f3",
+    "\ua6f4",
+    "\ua6f5",
+    "\ua6f6",
+    "\ua6f7",
+    "\ua874",
+    "\ua875",
+    "\ua876",
+    "\ua877",
+    "\ua8ce",
+    "\ua8cf",
+    "\ua8f8",
+    "\ua8f9",
+    "\ua8fa",
+    "\ua8fc",
+    "\ua92e",
+    "\ua92f",
+    "\ua95f",
+    "\ua9c1",
+    "\ua9c2",
+    "\ua9c3",
+    "\ua9c4",
+    "\ua9c5",
+    "\ua9c6",
+    "\ua9c7",
+    "\ua9c8",
+    "\ua9c9",
+    "\ua9ca",
+    "\ua9cb",
+    "\ua9cc",
+    "\ua9cd",
+    "\ua9de",
+    "\ua9df",
+    "\uaa5c",
+    "\uaa5d",
+    "\uaa5e",
+    "\uaa5f",
+    "\uaade",
+    "\uaadf",
+    "\uaaf0",
+    "\uaaf1",
+    "\uabeb",
+    "\ufd3e",
+    "\ufd3f",
+    "\ufe10",
+    "\ufe11",
+    "\ufe12",
+    "\ufe13",
+    "\ufe14",
+    "\ufe15",
+    "\ufe16",
+    "\ufe17",
+    "\ufe18",
+    "\ufe19",
+    "\ufe30",
+    "\ufe31",
+    "\ufe32",
+    "\ufe33",
+    "\ufe34",
+    "\ufe35",
+    "\ufe36",
+    "\ufe37",
+    "\ufe38",
+    "\ufe39",
+    "\ufe3a",
+    "\ufe3b",
+    "\ufe3c",
+    "\ufe3d",
+    "\ufe3e",
+    "\ufe3f",
+    "\ufe40",
+    "\ufe41",
+    "\ufe42",
+    "\ufe43",
+    "\ufe44",
+    "\ufe45",
+    "\ufe46",
+    "\ufe47",
+    "\ufe48",
+    "\ufe49",
+    "\ufe4a",
+    "\ufe4b",
+    "\ufe4c",
+    "\ufe4d",
+    "\ufe4e",
+    "\ufe4f",
+    "\ufe50",
+    "\ufe51",
+    "\ufe52",
+    "\ufe54",
+    "\ufe55",
+    "\ufe56",
+    "\ufe57",
+    "\ufe58",
+    "\ufe59",
+    "\ufe5a",
+    "\ufe5b",
+    "\ufe5c",
+    "\ufe5d",
+    "\ufe5e",
+    "\ufe5f",
+    "\ufe60",
+    "\ufe61",
+    "\ufe63",
+    "\ufe68",
+    "\ufe6a",
+    "\ufe6b",
+    "\uff01",
+    "\uff02",
+    "\uff03",
+    "\uff05",
+    "\uff06",
+    "\uff07",
+    "\uff08",
+    "\uff09",
+    "\uff0a",
+    "\uff0c",
+    "\uff0d",
+    "\uff0e",
+    "\uff0f",
+    "\uff1a",
+    "\uff1b",
+    "\uff1f",
+    "\uff20",
+    "\uff3b",
+    "\uff3c",
+    "\uff3d",
+    "\uff3f",
+    "\uff5b",
+    "\uff5d",
+    "\uff5f",
+    "\uff60",
+    "\uff61",
+    "\uff62",
+    "\uff63",
+    "\uff64",
+    "\uff65",
+]
+
+ARABIC_PUNCTUATION = ':"؟!؛،,.؍,'
+ENGLISH_PUNCTUATION = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
+
+PUNCTUATION = list(ENGLISH_PUNCTUATION) + \
+    list(ARABIC_PUNCTUATION) + OTHER_PUNCTUATION
+
+EXPRESSION_EMOJIS = [
+    "["
+    "\U0001F600-\U0001F64F"  # emoticons
+    "\U0001F300-\U0001F5FF"  # symbols & pictographs
+    "\U0001F680-\U0001F6FF"  # transport & map symbols
+    "\U0001F1E0-\U0001F1FF"  # flags (iOS)
+    "\U00002500-\U00002BEF"  # chinese char
+    "\U00002702-\U000027B0"
+    "\U00002702-\U000027B0"
+    "\U000024C2-\U0000FDEF"
+    "\U0000FDFE-\U0001F251"
+    "\U0001f926-\U0001f937"
+    "\U00010000-\U0010ffff"
+    "\u2640-\u2642"
+    "\u2600-\u2B55"
+    "\u200d"
+    "\u23cf"
+    "\u23e9"
+    "\u231a"
+    "\ufe0f"  # dingbats
+    "\u3030"
+    "]+"
+    ]
+```
+
+## Processor.py
+```python
+import re
+
+from nltk import word_tokenize
+
+from PyShbak.ar import *
+from PyShbak.en import *
+from PyShbak.general import *
+
+
+class Arabic_Processor:
+    def remove_other_lang(text : str) -> str:
+        '''
+            = Keep ARABIC PUNCTUATION
+            text : "أَهْلًا وسَهْلًا Hello 212"
+            output : 
+                ---> "أهلا وسهلا"
+        '''
+        chars = [char for char in text if ((char in ARABIC_CHARS) or (char in ARABIC_NUM) or (char in ARABIC_PUNCTUATION))]
+        output = ''.join(chars)
+        return output
+
+    def remove_diacritics(text : str) -> str:
+        '''
+            text : "أَهْلًا وسَهْلًا Hello 212"
+            output : 
+                ---> "أهلا وسهلا Hello 212"
+        '''
+        chars = [char for char in text if (char not in HARAKAT)]
+        output = ''.join(chars)
+        return output
+
+    def remove_arabic_punctuations(text : str) -> str:
+        '''
+            text : ", أَهْلًا وسَهْلًا Hello 212"
+            output : 
+                ---> "  أَهْلًا وسَهْلًا Hello 212"
+        '''
+        chars = [char for char in text if (char not in ARABIC_PUNCTUATION)]
+        output = ''.join(chars)
+        return output
+    
+
+    def arabic_only(text:str, numbers='No') -> str:
+        '''
+            text : "أهلا وسهلا 122 hello ٣٤".
+            numbers : 
+                -> No is a deafult value.
+                    output : 
+                    --->> "أهلا وسهلا"
+                -> Yes : keep arabic lang with arabic num.
+                    output : 
+                    --->> "أهلا وسهلا ٣٤"
+                -> All : keep arabic lang with all num.
+                    output : 
+                    --->> "أهلا وسهلا 122 ٣٤"
+        '''
+        if numbers not in ["No", "Yes", "All"]:
+            numbers = "No"
+        
+        if numbers == "No":
+            chars = [char for char in text if char in ARABIC_CHARS]
+            output = ''.join(chars)
+        elif numbers == "Yes":
+            chars = [char for char in text if (char in ARABIC_CHARS) or (char in ARABIC_NUM)]
+            output = ''.join(chars)
+        elif numbers == "All":
+            chars = [char for char in text if (char in ARABIC_CHARS) or (char in ARABIC_NUM) or (char in ENGLISH_NUM)]
+            output = ''.join(chars)
+        return output
+
+    
+    def with_out_num(text:str) -> str:
+        '''
+            text : "أهلا وسهلا 122 hello ٣٤".
+                output : 
+                --->  "أهلا وسهلا 122 hello ".
+        '''
+        chars = [char for char in text if (char not in ARABIC_NUM)]
+        output = ''.join(chars)
+        return output
+    
+
+
+class English_Processor:
+    def remove_stopword(text:str) -> str:
+        pass
+
+    def english_only(text:str, numbers = "No") -> str:
+        '''
+            text : "أهلا وسهلا 122 hello ٣٤".
+            numbers : 
+                -> No is a deafult value.
+                    output : 
+                    --->> "hello
+                -> Yes : keep english lang with english num.
+                    output : 
+                    --->> "122 hello "
+                -> All : keep english lang with all num.
+                    output : 
+                    --->> "122 hello ٣٤"
+        '''
+        if numbers not in ["No", "Yes", "All"]:
+            numbers = "No"
+        
+        if numbers == "No":
+            chars = [char for char in text if char in ENGLISH_CHARS]
+            output = ''.join(chars)
+        elif numbers == "Yes":
+            chars = [char for char in text if (char in ENGLISH_CHARS) or (char in ENGLISH_NUM)]
+            output = ''.join(chars)
+        elif numbers == "All":
+            chars = [char for char in text if (char in ENGLISH_CHARS) or (char in ARABIC_NUM) or (char in ENGLISH_NUM)]
+            output = ''.join(chars)
+        return output
+
+
+    
+    def remove_english_punctuations(text:str) -> str:
+        '''
+            text : "أَهْلًا وسَهْلًا Hello 212 , ?"
+            output : 
+                ---> "أَهْلًا وسَهْلًا Hello 212"
+        '''
+        chars = [char for char in text if (char not in ENGLISH_PUNCTUATION)]
+        output = ''.join(chars)
+        return output
+
+    
+    def with_out_num(text:str) -> str:
+        '''
+            text : "أهلا وسهلا 122 hello ٣٤".
+                output : 
+                --->  "أهلا وسهلا  hello ٣٤".
+        '''
+
+        chars = [char for char in text if (char not in ENGLISH_NUM)]
+        output = ''.join(chars)
+        return output
+
+
+class General_Processor:
+    def remove_mentions(text: str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+                output : 
+                ---> 'هدف لا نراه كل يوم . #LEITOT . شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+        
+        '''
+        output = re.sub(r" @[\w_]+ | @[\w_]+|^@[\w_]+ ", " ", string = text)
+        return output
+    
+    def remove_hasgtag(text:str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+                output : 
+                ---> 'هدف لا نراه كل يوم . . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+        
+        '''
+        output = re.sub(r"#.*?(?=\s)", "", string=text)
+        return output
+    
+    def remove_links(text: str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+                output : 
+                ---> 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 '
+        
+        '''
+        output = re.sub("http[s]?://\S+|[wW]{3,}[\S/\?=\.&]+", "", string=text)
+        return output
+    
+    def remove_punctation(self, text: str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+                output : 
+                ---> 'هدف لا نراه كل يوم  LEITOT  okiq8e شوف ابن اختي شوف 🤗 httpstcoZmVMl4sOqA'
+        
+        '''
+
+        chars = [char for char in text if (char not in PUNCTUATION)]
+        output = ''.join(chars)
+        return output
+    
+    def keep_text(self, text:str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+
+                output : 
+                ---> 'هدف لا نراه كل يوم  LEITOT  okiq8e شوف ابن اختي شوف httpstcoZmVMl4sOqA'
+        
+        '''
+        chars = [char for char in text if (char in ARABIC_CHARS) or (char in ENGLISH_CHARS)]
+        output = ''.join(chars)
+        return output
+    
+    def remove_emojis(text:str) -> str:
+        '''
+            text : 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف 🤗 https://t.co/ZmVMl4sOqA'
+
+                output : 
+                ---> 'هدف لا نراه كل يوم . #LEITOT . @oki_q8e شوف ابن اختي شوف  https://t.co/ZmVMl4sOqA'
+        
+        '''
+        emoj = re.compile("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+        u"\U00002500-\U00002BEF"  # chinese char
+        u"\U00002702-\U000027B0"
+        u"\U00002702-\U000027B0"
+        u"\U000024C2-\U0001F251"
+        u"\U0001f926-\U0001f937"
+        u"\U00010000-\U0010ffff"
+        u"\u2640-\u2642" 
+        u"\u2600-\u2B55"
+        u"\u200d"
+        u"\u23cf"
+        u"\u23e9"
+        u"\u231a"
+        u"\ufe0f"  # dingbats
+        u"\u3030"
+                      "]+", re.UNICODE)
+        output = re.sub(emoj, '', text)
+        return output
+
+    def remove_whitespace(text: str, keep_spaces=1) -> str:
+        '''
+            text: "ff       ff  ff"
+                output : 
+                ---> 'ff ff ff'
+
+        '''
+        return re.sub(" +", " " * keep_spaces, "".join(text))
+
+```
+## Normalization.py
+
+```python
+import re
+
+from PyShbak.ar import *
+from PyShbak.en import *
+from PyShbak.general import *
+
+class Normalization_ar:
+    def alef(text:str) -> str:
+        for tam in ALEF_CHARS:
+            text = text.replace(tam, NORMAL_ALEF)
+        return text
+
+    def lamalef(text:str) -> str:
+        for tam in LAM_ALEF_COMBINED:
+            text = text.replace(tam, LAM_ALEF_NORMAL)
+        return text
+
+    def hamza(text:str) -> str:
+        for tam in HAMZA_CHARS:
+            print(tam)
+            text = text.replace(tam, NORMAL_HAMZA)
+            print(text)
+        return text
+
+    
+    def tah(text:str) -> str:
+        text = text.replace(TAH_MARBOTA, HA)
+        return text
+
+
+    def madah(text:str) -> str:
+        text = text.replace(TATWEEL, "")
+        return text
+    
+    def normalization_all(text:str) -> str:
+        text = Normalization_ar.alef(text)
+        text = Normalization_ar.lamalef(text)
+        text = Normalization_ar.hamza(text)
+        text = Normalization_ar.tah(text)
+        return text
+```
+
+## cleaningtext.py
+```python
+import re
+import nltk
+
+class Cleaner:
+    def delete_repeated_characters(input_text:str) -> str:
+        '''
+            input_text : your text
+                input : 'ههههههههههههه'
+                output: 'هه'
+        '''
+        pattern  = r'(.)\1{2,}'
+        out_text = re.sub(pattern, r"\1\1", input_text)
+        return out_text
+
+    def replace_letters(input_text:str) -> str:
+        '''
+        input_text : your text
+            input: 'أهلا وسهلا أجمعين'
+            output: 'اهلا وسهلا اجمعين'
+        '''
+        replace = {"أ": "ا","ة": "ه","إ": "ا","آ": "ا","": ""}
+        replace = dict((re.escape(k), v) for k, v in replace.items()) 
+        pattern = re.compile("|".join(replace.keys()))
+        out_text = pattern.sub(lambda m: replace[re.escape(m.group(0))], input_text)
+        return out_text
+
+    def clean_text(input_text:str) -> str:
+        replace = r'[/(){}\[\]|@âÂ,;\?\'\"\*…؟–’،!&\+-:؛-]'
+        out_text = re.sub(replace, " ", input_text)
+        words = nltk.word_tokenize(out_text)
+        words = [word for word in words if word.isalpha()]
+        out_text = ' '.join(words)
+        return out_text
+
+    def remove_vowelization(input_text:str) -> str:
+        vowelization = re.compile(""" ّ|َ|ً|ُ|ٌ|ِ|ٍ|ْ|ـ""", re.VERBOSE)
+        out_text = re.sub(vowelization, '', input_text)
+        return out_text
+
+    def remove_stopword(input_text:str, lang:str= "All") -> str:
+        '''
+            input_text : your text
+            lang : [All:deafult, 'ar', 'en']
+        '''
+        if lang == "All":
+            stop_words = set(nltk.corpus.stopwords.words("arabic") + nltk.corpus.stopwords.words("english"))
+            tokenizer = nltk.tokenize.WhitespaceTokenizer()
+            tokens = tokenizer.tokenize(input_text)
+            wnl = nltk.WordNetLemmatizer()
+            lemmatizedTokens =[wnl.lemmatize(t) for t in tokens]
+            out_text = [w for w in lemmatizedTokens if not w in stop_words]
+            out_text = ' '.join(out_text)
+        
+        if lang == "ar":
+            stop_words = set(nltk.corpus.stopwords.words("arabic"))
+            tokenizer = nltk.tokenize.WhitespaceTokenizer()
+            tokens = tokenizer.tokenize(input_text)
+            wnl = nltk.WordNetLemmatizer()
+            lemmatizedTokens =[wnl.lemmatize(t) for t in tokens]
+            out_text = [w for w in lemmatizedTokens if not w in stop_words]
+            out_text = ' '.join(out_text)
+        
+        if lang == "en":
+            stop_words = set(nltk.corpus.stopwords.words("english"))
+            tokenizer = nltk.tokenize.WhitespaceTokenizer()
+            tokens = tokenizer.tokenize(input_text)
+            wnl = nltk.WordNetLemmatizer()
+            lemmatizedTokens =[wnl.lemmatize(t) for t in tokens]
+            out_text = [w for w in lemmatizedTokens if not w in stop_words]
+            out_text = ' '.join(out_text)
+        
+        return out_text
+
+    def stem_text(input_text:str) -> str:
+        st = nltk.ISRIStemmer()
+        tokenizer = nltk.tokenize.WhitespaceTokenizer()
+        tokens = tokenizer.tokenize(input_text)
+        out_text = [st.stem(w) for w in tokens]
+        out_text = ' '.join(out_text)
+        return out_text
+
+    def text_prepare(input_text, ar_text:str, lang='All') -> str:
+        out_text = Cleaner.delete_links(input_text)
+        out_text = Cleaner.delete_repeated_characters(out_text)
+        out_text = Cleaner.clean_text(out_text)
+        out_text = Cleaner.remove_stopwords(out_text)
+        if ar_text:
+            out_text = Cleaner.replace_letters(out_text)
+            out_text = Cleaner.remove_vowelization(out_text)
+            out_text = Cleaner.stem_text(out_text)
+        else:
+            out_text = out_text.lower()
+        return out_text
+```
 
 ## [Bibliography : Arabic text summarization approaches: A comparison study](https://www.researchgate.net/profile/Hani-Alghanem/publication/348163080_Arabic_text_summarization_approaches_A_comparison_study/links/5ff187a6a6fdccdcb826718e/Arabic-text-summarization-approaches-A-comparison-study.pdf)
 
