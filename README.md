@@ -8,6 +8,15 @@ It is important to assess the effectiveness of the summaries generated via way o
 
 ## 1.2 - NLP
 ### 1.2.1 - Problem definition
+We all know that machines cannot understand human languages such as speeches, texts, or even letters, so converting these texts into machine-understandable format has become a crucial goal to enable them to perform useful tasks. The domain of study that concentrates on enabling computers to intelligently process human languages is termed Natural Language Processing or NLP for short. It is a multi-speciality field that com- bines artificial intelligence, computing science, cognitive science, information processing, and linguistics. Natural language processing appeared to facilitate the work of the user and satisfy the desire to communicate with the computer in a natural language. 
+
+NLP is divided into two parts: 
+
+Natural Language Understanding (NLU) and Natural Language Generation (NLG). 
+
+1.2.1.1 - Natural Language Understanding (NLU) is the part of natural language processing that helps computers understand and interpret natural language as human beings do. It is used for machine translation, question answering, and many others. 
+
+1.2.1.2 - Natural Language Generation (NLG) is a component of natural language processing, which is the process of creating meaningful text in the form of a natural language from an internal representation. It can be considered the opposite of natural language understanding [4]. NLG systems offer an important role in text summarization, machine translation, and dialogue systems.
 ### 1.2.2 - Application of NLP
 
 ## 1.3 - Arabic language and its challenges
