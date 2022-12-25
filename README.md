@@ -54,6 +54,21 @@ A problem arises in writing the Arabic language with numbers, because most of th
 
 There are several problems in Arabic language texts that are not present other than in Arabic texts such as Twill and Folders and we will offer to solve them after **Arabic encoding** .
 ### 1.3.2 - Arabic encoding
+
+An encoding is a method of representing the symbols in a script in a consistent manner for storage and access by machines. When it comes to encoding design and how it interacts with data storage and access, the Arabic alphabet has some unique issues. This is mostly due to the differences between Arabic and European scripts.
+
+# ISO-8859-6
+# CP-1256
+
+
+**Unicode**
+In order to accommodate the non-english characters, people started going a little crazy on how to use the numbers from 128 to 255 still available on a single byte. Different people would use different characters for the same numbers. Obviously, not only was it the wild wild west, but it quickly dawned that the extra available numbers could not even come close to represent the complete set of characters for some languages.
+
+The Unicode was a brave attempt to create a single character set that could represent every characters in every imaginable language systems. This required a paradigm shift in how to interpret characters. And in this new paradigm, each character was an idealized abstract entity. Also in this system, rather than use a number, each character was represented as a code-point. The code-points were written as: U+00639, where U stands for ‘Unicode’, and the numbers are hexadecimal.
+
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Comparing%20the%20correct%20and%20incorrect%20decoding%20of%20various%20Arabic%20encodings.png)
+
+[Bibliography : Introduction to Arabic Natural Language Processing](https://feng.stafpu.bu.edu.eg/Electrical%20Engineering/3064/crs-12176/Files/Introduction%20to%20Arabic%20Natural%20Language%20Processing.pdf)
 ### 1.3.3 - Arabic language challenges
 
 ## [Bibliography : Arabic text summarization approaches: A comparison study](https://www.researchgate.net/profile/Hani-Alghanem/publication/348163080_Arabic_text_summarization_approaches_A_comparison_study/links/5ff187a6a6fdccdcb826718e/Arabic-text-summarization-approaches-A-comparison-study.pdf)
