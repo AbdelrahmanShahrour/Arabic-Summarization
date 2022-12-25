@@ -12,12 +12,24 @@ We all know that machines cannot understand human languages such as speeches, te
 
 NLP is divided into two parts: 
 
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/38891nlg.png)
+
 Natural Language Understanding (NLU) and Natural Language Generation (NLG). 
 
 1.2.1.1 - Natural Language Understanding (NLU) is the part of natural language processing that helps computers understand and interpret natural language as human beings do. It is used for machine translation, question answering, and many others. 
 
-1.2.1.2 - Natural Language Generation (NLG) is a component of natural language processing, which is the process of creating meaningful text in the form of a natural language from an internal representation. It can be considered the opposite of natural language understanding [4]. NLG systems offer an important role in text summarization, machine translation, and dialogue systems.
+1.2.1.2 - Natural Language Generation (NLG) is a component of natural language processing, which is the process of creating meaningful text in the form of a natural language from an internal representation. It can be considered the opposite of natural language understanding. NLG systems offer an important role in text summarization, machine translation, and dialogue systems.
+## [Bibliography : Natural language processing: state of the art, current trends and challenges](https://link.springer.com/article/10.1007/s11042-022-13428-4)
 ### 1.2.2 - Application of NLP
+1.2.2.1 - Machine translation (MT): Natural language processing is at the heart of MT because it uses machines to automatically translate the natural language (from one language to another). The challenge of machine translation is not to translate word for word, but to use grammar and tense to preserve the true meaning of the sentence
+
+1.2.2.2 - Question answering (QA): Question answering is one of the most important tasks in natural language processing (NLP), where a system takes a natural language question as input and returns a textual answer or answer paragraph.
+
+1.2.2.3 - Sentiment Analysis (SA): The field of sentiment analysis also called opinion mining hasreceived a lot of focus from NLP. It is the field of analyzing people’s opinions, sentiments, evaluations, and reviews to determine the positive or negative orientation of user-generated texts about entities such as products, services, and others.
+## [Bibliography : Sentiment Analysis and Opinion Mining ](https://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf)
+
+1.2.2.4 - Summarization: It is the process of conveying the most important information from a source (or sources) to produce a condensed version. This task took advantage of the NLP to reformulate the generated summary into a more coherent text.
+## [Bibliography : Sentiment Analysis and Opinion Mining ](https://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf)
 
 ## 1.3 - Arabic language and its challenges
 ### 1.3.1 - Arabic language
@@ -26,6 +38,7 @@ Natural Language Understanding (NLU) and Natural Language Generation (NLG).
 
 ## 1.4 - Text Summarization
 ### 1.4.1 - Manual summarization
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/man-summ.png)
 ### 1.4.2 - Automatic summarization
 ### 1.4.2.1 - Automatic text summarization aspects
 ### 1.4.2.2 - Automatic text summarization approaches
