@@ -1171,10 +1171,20 @@ This extraction often leads to higher incoherence in the summary sentences, endu
 Since this technique extracts the sentences as they are, there is a high possibility that the pronouns lose their references. In addition, these types of summaries are less readablees.
 
 #### 1.4.2.2 - Abstractive summarization
+Abstractive summarization is paraphrasing the source text information concisely and understandably, as a human does. This is done with the help of a linguistic method for understanding and examining the original text. Therefore, it needs extensive natural language processing to have the ability to rewrite and paraphrase important information from text documents. In this approach, an internal semantic representation is built, and then the summary is generated using natural language generation techniques
 
+**Advantages of abstractive**
+
+Since the abstract method necessitates a deep analysis of the text and the capability to produce new sentences, its generated results are closer to the manual summary. This has several benefits, including reducing redundancy, maintaining a good compression rate, being more concise, semantically relevant and condensed more strongly than extractive ones.
+
+**Disadvantages of abstractive**
+
+The first issue that faces this approach is the difficulty to generate such a type. And its difficulty is followed by the hardness of developing a program that allows it to be done. Representation is also considered the biggest problem facing abstractive summaries. The richness of representations of abstractive systems controls their
+capabilities since they cannot summarize what their representations cannot capture. Another drawback, according to, current abstractive systems often suffer from the matter that they make repetitive words, and also not treating words out-of-vocabulary appropriately.
 
 ## [Bibliography : A survey on existing extractive techniques for query-based text summarization](https://ieeexplore.ieee.org/abstract/document/7377323)
 ## [Bibliography : Abstractive Document Summarization via Neural Model with Joint Attention](https://link.springer.com/chapter/10.1007/978-3-319-73618-1_28)
+## [Bibliography : PRE-TRAINED SUMMARIZATION DISTILLATION](https://arxiv.org/pdf/2010.13002v2.pdf)
 ## 1.5 - Related works
 ### 1.5.1 - Before the emergence of BERT
 ### 1.5.1 - Usage of BERT after its emergence
