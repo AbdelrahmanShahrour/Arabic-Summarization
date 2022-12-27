@@ -1196,19 +1196,56 @@ capabilities since they cannot summarize what their representations cannot captu
 ---
 # 2 - Word embedding for text summarization
 ## 2.1 - Introduction
+When building models whose aim is to grasp and interpret natural languages such as human languages, it is not practical for these models to directly interact with text data.
+They rely mainly on statistical, mathematical, and optimization techniques. They are only able to understand numbers. This necessitates preprocessing text data and transforming it into a representation of matching scalar, allowing models to make computations and decisions. Embedding algorithms efficiently find a corresponding numerical representation of text words. 
+
+Word embedding is the collective name for a group of language modeling and feature learning techniques in NLP in which words or phrases from vocabulary are mapped to vectors of real numbers. With the increasing human need for more effective representations that express their language fluently, embedding algorithms have evolved from representing the word with a number to representing it with vectors, and from having only one representation for each word, it has become possible for one word to have multiple representations depending on the context in which it appears. Here algorithms are divided into three types, frequency-based, static and contextual. To perform the task of summarization, these types of word embedding are used. What interests us in this work is the contextual embedding algorithms based on deep learning that help in providing a suitable representation of the intended meaning of the words in the text. The most famous development is BERT and its derivatives, which we will address later in this chapter. This chapter seeks to introduce the concept and basic types of word embedding algorithms. In addition to getting a general understanding of deep learning and the attention mechanism that is the building block of transformers, we will get to know the latter as well. Our chapter comes to a close with an overview of BERT, BART and PEGASUS.
+
 ## 2.2 - Word embedding
-### 2.2.1 - Traditional Word Embedding
-### 2.2.2 - Static Word Embedding
-### 2.2.3 - Contextualized Word Embedding
+
+Word embedding, also known as distributed word representation, is the representation of words with a set of real numbers in the form of a vector for example, to capture the semantic and syntactic information of words from the unlabeled text data set. This representation enables us to relate words together that appear from a similar context where words of similar meaning have a similar representation. They regard the process of word embeddings as scattered representations of text in dimensional space that attempt to capture the meanings of the words.
+
+Traditional word embedding (like TF-IDF), Static word embedding (like Word2Vector), and Contextualized word embedding (like BERT) are the three most common word embeddings types, according to
+
+![image]()
+
 ## 2.3 - Word embedding based on deep learning
-### 2.3.1 - Artificial Neural Network (ANN)
-### 2.3.2 - Deep Networks
-### 2.3.3 - Sequence-to-sequence models
-### 2.3.4 - Attention mechanism
-### 2.3.5 - Transformers
-### 2.3.6 - BERT
-### 2.3.7 - BART
-### 2.3.8 - PEGASUS
+### 2.3.1 - Sequence-to-sequence models
+Despite the flexibility and capability of DNNs, they can only be used to solve problems when the inputs and outputs can be coherently encoded using fixed-dimension vectors.
+
+They are not suitable for situations where the sequence length is unknown in advance. For instance, consider text summarization, which takes a large string of words as input and produces a concise summary that is likewise a sequence.
+
+The idea was to use an LSTM network to read the input sequence one timestep at a time, resulting in a large, fixed-dimensional vector representation, and then extract the output sequence from that vector using another LSTM. This is called the sequence-to-sequence model.
+
+![image]()
+
+Sequence-to-Sequence models combine two common deep learning architectures, recurrent neural networks and the encoder-decoder model which are commonly used to solve complex language problems. Both encoder and decoder are LSTM models (or sometimes GRU models).
+
+![image]()
+
+In case of text summarization, during training, the source text and reference summary data are tokenized and given to the encoder and decoder networks. The encoder network reads the source text and converts it to a context vector, which is then passed on to the decoder network, whose initial states are initialised by the encoder’s final states (for more details refer to), to aid in the prediction of the summary sequence.
+
+### 2.3.2 - Attention mechanism
+
+The attentional mechanism is a part of the neural architecture that allows highlightingrelevant aspects of the input i.e. it helps us to evaluate the importance of these elements(by calculating the weight distribution over the input sequence, assigning higher valuesto more relevant elements) and compacts them into a representation that condenses the features of the most relevant parts, called a context vector. In case of NLP, theinput is usually a series of text items.
+
+Various structures of attention have been proposed in recent years, such as multidimensional attention and memory-based attention, but we will only address self-attention, or as it is called intra-attention, as it has become a well-established building block of neural methods in NLP. It has been used for many tasks such as abstractive summarization. Simply self-attention is an attention mechanism that measures the relationship between elements of a single sequence in order to calculate the representation of the same sequence. The inputs interact with each other, ”self”, and decide what to give more attention, to capture contextual information deep within the sentence.
+
+![image]()
+
+### 2.3.3 - Transformers
+The transformer has gone beyond neural models such as convolutional and recurrent neural networks in performing natural language understanding and natural language generation tasks, becoming the dominant architecture for NLP
+
+The Transformer is a model architecture in which every output element is connected to every input element, completely dependent on the self-attention mechanisms. Transformer blocks are composed of two components: 6 layers of encoders and 6 layers of decoders. Each layer of both has two sub-layers: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. But the decoder has a third sub-layer which helps it to focus on the output of the encoder stack. Residual connections. connect each of the sub-layers in both the encoder and decoder followed by layer normalization.
+
+![image]()
+
+## [Bibliography : Layer Normalization](https://arxiv.org/abs/1607.06450)
+## [Bibliography : HuggingFace's Transformers: State-of-the-art Natural Language Processing](https://arxiv.org/abs/1910.03771)
+
+### 2.3.4 - BERT
+### 2.3.5 - BART
+### 2.3.6 - PEGASUS
 ## 2.4 - Conclusion
 ---
 ---
