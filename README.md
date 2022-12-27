@@ -272,7 +272,7 @@ BART’s representations can be utilised for a variety of downstream application
 
 A self-supervised objective **G**ap **S**entence **G**eneration (GSG) in **PEGASUS** pre-training was used. Similar to extractive summarization, some full sentences are removed or masked from the input documents and the model is charged with generating them as one output sequence from the remaining phrases.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Abstractive%20Summarization%20Using%20Pegasus.png)
 
 Figure Example of pre-taining PEGASUS on GSG
 
