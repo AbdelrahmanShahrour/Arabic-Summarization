@@ -207,7 +207,7 @@ In addition to being trained on the MLM, BERT was pre-trained using an unsupervi
 
 To summarize the above, BERT has been pre-trained on massive amounts of text on two unsupervised tasks which are: MLM and NSP, using a large model consisting of a 12 layers transformers for BERTbase (and 24 layers for BERTlarge). Creating state-of-the-art models with BERT requires fine-tuning it with only one additional output layer after it has been initialized with pre-trained parameters and then fine-tuning those parameters using labelled data from the final tasks
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Overall%20pre-training%20and%20fine-tuning%20procedures%20for%20BERT.png)
 
 from the BERT paper shows that the same structures are used in both pre-training and fine-tuning except for the output layers. Each downstream task ultimately has its own fine-tuned models, even though they are initialised using the same pre-trained parameters.
 
@@ -241,19 +241,19 @@ BART is a model that combines **B**idirectional and **A**uto-**R**egressive **T*
 
 In Figure ---, the document is bidirectionally encoded, with random tokens replaced by masks. BERT can’t easily be utilised for generation since missing tokens are predicted independently
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/BERT.png)
 
 Figure ---: BERT
 
 As for GPT (Figure --e), tokens are auto-regressively anticipated, which means GPT can be employed for the generation. Words, on the other hand, can only condition in a leftward context, so bidirectional interactions are impossible to learn.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/GPT.png)
 
 Figure --e : GPT
 
 For BART in Figure --x , encoder inputs do not have to match decoder outputs, allowing for arbitrary noise modifications. A document has been corrupted by mask symbols being used to replace text spans. The probability of the original document (right) is computed using an autoregressive decoder after the corrupted document (left) is encoded with a bidirectional model. An uncorrupted document is used as an input to the encoder and decoder for fine-tuning, and representations from the decoder’s final hidden state are employed.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/BART.png)
 
 Figure --x BART
 
@@ -261,7 +261,7 @@ The base model has 6 layers in the encoder and decoder and the large model has 2
 
 BART was trained by corrupting the text with a random obfuscation function. It allows applying any type of document corruption. The modifications that were used in the experiments are summarized below (Figure --m), which are token masking, token deletion, text infilling, sentence permutation, and document rotation.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Transformations%20for%20noising%20the%20input%20that%20were%20experimented%20with.png)
 
 Figure --m Transformations for noising the input that were experimented with
 
