@@ -182,7 +182,8 @@ It seems that Google’s goal was to understand the user’s intent rather than 
 
 in this Figure illustrates a comparison between the visualization of the neural network architecture of BERT with previous contextual pre-training methods. Based on the arrows that show the direction of information flow from the bottom to the up, it is found that BERT is deeply bidirectional, in contrast to OpenAI Generative Pre-Training (GPT) which is unidirectional [96], while Embeddings from Language Models (ElMo) is shallowly bidirectional
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Bi-directional%20BERT%20compared.png)
+## [Bi-directional BERT compared to others]
 
 However, training bidirectional models results in the problem that the word to be predicted indirectly ”see itself” in a multi-layer model and the model can therefore trivially predict the word. To solve this problem, the Masked Language Model (MLM) task was used. 15% of the words in the input are randomly masked, and then the whole sequence is fed through a deep bidirectional Transformer encoder with the objective that the masked words are only predicted based on context. For example: 
 
@@ -204,7 +205,68 @@ In addition to being trained on the MLM, BERT was pre-trained using an unsupervi
 
 || Label: NotNextSentence
 
+To summarize the above, BERT has been pre-trained on massive amounts of text on two unsupervised tasks which are: MLM and NSP, using a large model consisting of a 12 layers transformers for BERTbase (and 24 layers for BERTlarge). Creating state-of-the-art models with BERT requires fine-tuning it with only one additional output layer after it has been initialized with pre-trained parameters and then fine-tuning those parameters using labelled data from the final tasks
+
+![image]()
+
+from the BERT paper shows that the same structures are used in both pre-training and fine-tuning except for the output layers. Each downstream task ultimately has its own fine-tuned models, even though they are initialised using the same pre-trained parameters.
+
+As for the BERT inputs and outputs, they used the WordPiece embeddings with a 30,000 token vocabulary. Pairs of sentences are grouped in a single sequence. The sequence begins with a special classification token ([CLS]) and each sentence is separated by a special token ([SEP]) e.g. separating questions/answers as shown in Figure 2.16. Each token has a learned embedding demonstrating which sentence A or B belongs to, as shown in the figure. This method allows a single sentence or a pair of sentences to be represented clearly and unambiguously in a single sequence with the intent that BERT can handle a variety of downstream tasks. For each token, its input representation is the sum of the corresponding token embeddings, the segmentation embeddings and the position embeddings, as displayed in down Figure
+
+
+#### BERT models
+
+As previously stated, BERT was trained on BooksCorpus and the English Wikipedia, and two models were provided (BERTbase with 12 layers transformers and BERTlarge with 24 layers), following which numerous well-known and frequently used models for the English language, as well as other languages, including Arabic, appeared. Some of them are listed below.
+
+#### RoBERTa
+
+For **R**obustly **o**ptimized BERT approach [99], improves on BERT’s pretraining approach by training the model for longer periods of time with larger batches of data, removing the next sentence prediction target, training on longer sequences, and dynamically altering the masking pattern applied to the training data.
+
+#### DistilBERT
+A general-purpose pre-trained version of BERT, was introduced by Victor Sanh et al. It contains 40% fewer parameters and runs 60% quicker than BERTbase while maintaining 97% of its language understanding capabilities. Knowledge distillation was used to train DistilBERT, which is a technique for compressing a huge model termed the teacher into a smaller model named the student. They got a smaller transformer model by distilling Bert, which retains many similarities to the original BERT model while being lighter, smaller, and faster to run.
+
+#### AraBERT
+
+AraBERT, built by Wissam Antoun, Fady Baly, and Hazem Hajj, is an Arabic pre-trained language model based on the BERTbase architecture. It comes in 6 variants, in- cluding, AraBERTv0.2 base and large, AraBERTv2 base and large, AraBERTv0.1 base and large, and other new models for Arabic dialects and tweets called AraBERTv0.2-Twitter base and large too. All those models are under this repository.
+
+
+## [Bibliography : RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/abs/1907.11692)
+## [Bibliography : AraBERT: Transformer-based Model for Arabic Language Understanding](https://arxiv.org/abs/2003.00104)
+## [Bibliography : arabert](https://github.com/aub-mind/arabert)
+## [Bibliography : DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](https://arxiv.org/abs/1910.01108)
+
 ### 2.3.5 - BART
+
+BART is a model that combines **B**idirectional and **A**uto-**R**egressive **T**ransformers and pre-trains it. It is a denoising autoencoder based on a sequence-to-sequence model that can be used to perform a vast range of tasks. BART learns to recreate the original text after corrupting it with an arbitrary noising function. The noising function for generation tasks was text infilling, which used single mask tokens to mask randomly sampled text spans. It employs a basic Transformer-based neural machine translation architecture. It is almost a combination of generalised BERT (due to the bidirectional encoder) and GPT (due to the left-to-right decoder).
+
+In Figure ---, the document is bidirectionally encoded, with random tokens replaced by masks. BERT can’t easily be utilised for generation since missing tokens are predicted independently
+
+![image]()
+
+Figure ---: BERT
+
+As for GPT (Figure --e), tokens are auto-regressively anticipated, which means GPT can be employed for the generation. Words, on the other hand, can only condition in a leftward context, so bidirectional interactions are impossible to learn.
+
+![image]()
+
+Figure --e : GPT
+
+For BART in Figure --x , encoder inputs do not have to match decoder outputs, allowing for arbitrary noise modifications. A document has been corrupted by mask symbols being used to replace text spans. The probability of the original document (right) is computed using an autoregressive decoder after the corrupted document (left) is encoded with a bidirectional model. An uncorrupted document is used as an input to the encoder and decoder for fine-tuning, and representations from the decoder’s final hidden state are employed.
+
+![image]()
+
+Figure --x BART
+
+The base model has 6 layers in the encoder and decoder and the large model has 2 layers in each. The architecture is similar to that used in BERT; however, BART has around 10% more parameters than the BERT model of the same size.
+
+BART was trained by corrupting the text with a random obfuscation function. It allows applying any type of document corruption. The modifications that were used in the experiments are summarized below (Figure --m), which are token masking, token deletion, text infilling, sentence permutation, and document rotation.
+
+![image]()
+
+Figure --m Transformations for noising the input that were experimented with
+
+BART’s representations can be utilised for a variety of downstream applications, such as abstractive question answering and summarization. BART can be easily fine-tuned for sequence generation applications because it features an autoregressive decoder. The information is copied from the input but altered in both of these tasks, which is strongly related to the pre-training goal of denoising. The input sequence is encoded by the encoder, and the outputs are generated by the decoder.
+
 ### 2.3.6 - PEGASUS
 ## 2.4 - Conclusion
 ---
