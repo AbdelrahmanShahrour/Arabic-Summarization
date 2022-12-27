@@ -1207,7 +1207,7 @@ Word embedding, also known as distributed word representation, is the representa
 
 Traditional word embedding (like TF-IDF), Static word embedding (like Word2Vector), and Contextualized word embedding (like BERT) are the three most common word embeddings types, according to
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/wordenb.png)
 
 ## 2.3 - Word embedding based on deep learning
 ### 2.3.1 - Sequence-to-sequence models
@@ -1217,11 +1217,11 @@ They are not suitable for situations where the sequence length is unknown in adv
 
 The idea was to use an LSTM network to read the input sequence one timestep at a time, resulting in a large, fixed-dimensional vector representation, and then extract the output sequence from that vector using another LSTM. This is called the sequence-to-sequence model.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Sequence-to-sequence%20architecture.png)
 
 Sequence-to-Sequence models combine two common deep learning architectures, recurrent neural networks and the encoder-decoder model which are commonly used to solve complex language problems. Both encoder and decoder are LSTM models (or sometimes GRU models).
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Encoder-decoder%20model.png)
 
 In case of text summarization, during training, the source text and reference summary data are tokenized and given to the encoder and decoder networks. The encoder network reads the source text and converts it to a context vector, which is then passed on to the decoder network, whose initial states are initialised by the encoder’s final states (for more details refer to), to aid in the prediction of the summary sequence.
 
@@ -1231,14 +1231,14 @@ The attentional mechanism is a part of the neural architecture that allows highl
 
 Various structures of attention have been proposed in recent years, such as multidimensional attention and memory-based attention, but we will only address self-attention, or as it is called intra-attention, as it has become a well-established building block of neural methods in NLP. It has been used for many tasks such as abstractive summarization. Simply self-attention is an attention mechanism that measures the relationship between elements of a single sequence in order to calculate the representation of the same sequence. The inputs interact with each other, ”self”, and decide what to give more attention, to capture contextual information deep within the sentence.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/attition.jpeg)
 
 ### 2.3.3 - Transformers
 The transformer has gone beyond neural models such as convolutional and recurrent neural networks in performing natural language understanding and natural language generation tasks, becoming the dominant architecture for NLP
 
 The Transformer is a model architecture in which every output element is connected to every input element, completely dependent on the self-attention mechanisms. Transformer blocks are composed of two components: 6 layers of encoders and 6 layers of decoders. Each layer of both has two sub-layers: a multi-head self-attention mechanism and a position-wise fully connected feed-forward network. But the decoder has a third sub-layer which helps it to focus on the output of the encoder stack. Residual connections. connect each of the sub-layers in both the encoder and decoder followed by layer normalization.
 
-![image]()
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/The%20Transformer%20-%20model%20architecture.png)
 
 ## [Bibliography : Layer Normalization](https://arxiv.org/abs/1607.06450)
 ## [Bibliography : HuggingFace's Transformers: State-of-the-art Natural Language Processing](https://arxiv.org/abs/1910.03771)
