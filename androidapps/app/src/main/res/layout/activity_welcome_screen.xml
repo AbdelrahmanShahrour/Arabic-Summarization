@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".Other.WelcomeScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_2"
+        android:paddingBottom="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text Summarization"
+                    android:paddingRight="5dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/Color_text"
+                    android:fontFamily="@font/alqabas_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مرحبا بك في تطبيق"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/alqabas_regular"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:lineSpacingMultiplier="1.3"
+                android:fontFamily="@font/alqabas_regular"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+
+                android:text="تطبيقك الخاص لتلخيص النصوص بإستخدام الذكاء الأصطناعي أصبح جاهز لخدمتك , كل ما عليك ان تبدا بإستخدام التطبيق و تبدع في أستخدام التطبيق , شكرا لك على أستخدامك لتطبيقنا , لن أخذ الكثير من وقتك , الرجاء فقط كتابة أسمك لو سمحت و بعدها أبدا بأستخدام التطبيق.."/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="الرجاء كتابة أسم المستخدم لو سمحت : "
+            android:fontFamily="@font/alqabas_bold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/editTextYourName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:fontFamily="@font/alqabas_regular"
+            android:layout_margin="16dp"
+            android:padding="2dp"
+            android:background="@drawable/border"
+            android:inputType="textPersonName" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border2"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/alqabas_regular"
+            android:text="أبدأ"
+            android:onClick="goHomeScreen"/>
+
+    </LinearLayout>
+
+</LinearLayout>

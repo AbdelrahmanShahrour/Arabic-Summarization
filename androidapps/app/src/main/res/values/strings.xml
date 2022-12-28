@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Text Summarization تلخيص النصوص</string>
+    <string name="analyze_text">http://mohammedalbasha.pythonanywhere.com/analyze_text</string>
+    <string name="analyze_url">http://mohammedalbasha.pythonanywhere.com/analyze_url</string>
+
+    <string-array name="model_name">
+        <item>decision_tree_model</item>
+        <item>gaussian_nb_model</item>
+        <item>logistic_regression_model</item>
+        <item>random_forest_model</item>
+        <item>ridge_model</item>
+    </string-array>
+
+
+    <string-array name="model_name_HuggingFace">
+        <item>bert2bert</item>
+        <item>arabartsummarization</item>
+        <item>xlmroberta2xlmroberta</item>
+        <item>AraBART-summ</item>
+        <item>auto-arabic-summarization</item>
+    </string-array>
+
+</resources>
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/background"
+android:fillViewport="true"
+tools:context=".Tl5e9.openAi">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_2"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/alqabas_bold"
+                android:paddingRight="5dp"
+                android:text="تلخيص نصوص باستخدام api !#"
+                android:textColor="@color/Color_text"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alqabas_regular"
+                android:lineSpacingMultiplier="1.3"
+                android:paddingTop="5dp"
+                android:text="في هذه الخانة يمكنك وضع أي نص تريده لكي يتم تلخيصه وذلك يتم بمساعدة api جاهز من شركة openAi لتساعدنا على التلخيص بشكل سريع و مبهر ..."
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alqabas_bold"
+            android:text="يرجى وضع النص المراد تلخيصه هنا :"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editText_Text_openai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:editable="true"
+            android:ems="10"
+            android:enabled="true"
+            android:focusable="true"
+            android:fontFamily="@font/alqabas_regular"
+            android:hint="ضع النص هنا"
+            android:inputType="textMultiLine"
+            android:isScrollContainer="true"
+            android:maxLines="6"
+            android:padding="10dp"
+            android:scrollbars="vertical" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_openai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border2"
+                android:fontFamily="@font/alqabas_bold"
+                android:text="تلخيص" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

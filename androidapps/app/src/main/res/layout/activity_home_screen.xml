@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Other.HomeScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alqabas_regular"
+                    android:paddingRight="10dp"
+                    android:text="👑"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/nameUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alqabas_bold"
+                    android:paddingRight="3dp"
+                    android:text="أسم المستخدم"
+                    android:textColor="@color/Color_text"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alqabas_regular"
+                    android:text="مرحبا بك "
+                    android:paddingRight="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:background="@color/white" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/border3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/image1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alqabas_bold"
+                        android:text="ما هي خدمة تلخيص النصوص ؟؟"
+                        android:textColor="@color/white"
+                        android:layout_margin="5dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/alqabas_regular"
+                        android:lineSpacingMultiplier="1.2"
+                        android:layout_margin="5dp"
+                        android:text="هي خدمة تقوم بعمل تلخيص للنصوص  و المقالات و المواقع بإستخدام الذكاء الأصطناعي و NLP بعدة خوارزميات تم تدرييبها على الألاف من النصوص لأعطائك أفضل نتيجة ممكنة 👑"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border2"
+                    android:fontFamily="@font/alqabas_regular"
+                    android:onClick="rate"
+                    android:text="تقيم التطبيق"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/alqabas_regular"
+                    android:onClick="test"
+                    android:text="أقرا المزيد"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/alqabas_bold"
+            android:text="خدماتنا :"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:id="@+id/HsV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-15dp"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:weightSum="4">
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="goTo_Tl5e9_openAi">
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/border3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_bold"
+                                android:text="تلخيص نص - Api"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_regular"
+                                android:text="تلخيص نص من خلال api جاهز بمساعدة open ai GPT-3 ..."
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="end"
+                                    android:text="اضغط هنا"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <ImageView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_marginTop="-110dp"
+                                android:alpha="0.1"
+                                android:rotation="-25"
+                                android:src="@drawable/gpt3" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="160dp"
+                        android:gravity="right">
+
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="3dp"
+                            android:src="@drawable/gpt3" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="goTo_Tl5e9_huggingface">
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/border3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_bold"
+                                android:text="تلخيص نص Hugging Face"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_regular"
+                                android:text="تلخيص نص من خلال Model قمنا بتدريبه و رفعه على موقع Hugging Face ..."
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="end"
+                                    android:text="اضغط هنا"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <ImageView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_marginTop="-110dp"
+                                android:alpha="0.1"
+                                android:rotation="-25"
+                                android:src="@drawable/huggingface" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="160dp"
+                        android:gravity="right">
+
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="3dp"
+                            android:src="@drawable/huggingface" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="goTo_Tl5e9_Url">
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/border3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_bold"
+                                android:text="تلخيص نص من رابط"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_regular"
+                                android:text="تلخيص نص من خلال  موقع إلكتروني حيث يمكنك وضع رابط المقال المراد تلخيصه وسوف يتم جلب النص تلقائيا و اعطائك التلخيص بشكل فوري..."
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="end"
+                                    android:text="اضغط هنا"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <ImageView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_marginTop="-100dp"
+                                android:alpha="0.1"
+                                android:rotation="-25"
+                                android:src="@drawable/www" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="160dp"
+                        android:gravity="right">
+
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="3dp"
+                            android:src="@drawable/www" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:onClick="goTo_Tl5e9_n9"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/border3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_bold"
+                                android:text="تلخيص نص"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="15dp"
+                                android:fontFamily="@font/alqabas_regular"
+                                android:text="تلخيص نص من خلالك حيث  يمكنك وضع النص المراد تلخيصه بكل سهولة..."
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="end"
+                                    android:text="اضغط هنا"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <ImageView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="-20dp"
+                                android:layout_marginTop="-120dp"
+                                android:alpha="0.1"
+                                android:rotation="-25"
+                                android:src="@drawable/note" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="180dp"
+                        android:gravity="right">
+
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:padding="3dp"
+                            android:rotation="-15"
+                            android:src="@drawable/note" />
+
+
+                        <ImageView
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginLeft="3dp"
+                            android:padding="3dp"
+                            android:src="@drawable/note" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@font/alqabas_bold"
+            android:text="ميزة مدفوعة :"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="135dp"
+                            android:layout_height="140dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:src="@drawable/text_to_speech" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/alqabas_bold"
+                                android:text="التلخيص من خلال الصوت"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:layout_width="180dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/white" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/alqabas_regular"
+                                android:lineSpacingMultiplier="1.2"
+                                android:text="يمكنك تلخيص النص الذي تقوله بكل سهولة وترجمة النص الى اللغة العربية بكل سهولة ومن خلال ضغطة زر واحدة فقط"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:gravity="right"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="right|bottom"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:text=" مرات مجانا"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/numberSoundText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="right|bottom"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:text="5"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/alqabas_bold"
+                                    android:gravity="right|bottom"
+                                    android:lineSpacingMultiplier="1.2"
+                                    android:text="تجربة "
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border2"
+                            android:fontFamily="@font/alqabas_regular"
+                            android:text="شراء الميزة"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonSoundText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:fontFamily="@font/alqabas_regular"
+                            android:onClick="soundText"
+                            android:text="تجربة "
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="15dp"
+                    android:padding="3dp"
+                    android:src="@drawable/premium" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".Tl5e9.Tl5e9_SoundToText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_2"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/alqabas_bold"
+                        android:text="التلخيص من خلال الصوت !#"
+                        android:textColor="@color/Color_text"
+                        android:textSize="18sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alqabas_regular"
+                    android:lineSpacingMultiplier="1.3"
+                    android:paddingTop="5dp"
+                    android:text="في هذه الخانة يمكنك التكلم وسوف يتم كتابة النص الذي تقوله و بعدها سوف يتم تلخيص النص الذي قلته بكل سهولة"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alqabas_bold"
+                android:text="يرجى وضع النص المراد تلخيصه هنا :"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/text_before_summarization_SoundToText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:editable="true"
+                android:ems="10"
+                android:enabled="true"
+                android:focusable="true"
+                android:fontFamily="@font/alqabas_regular"
+                android:hint="النص سوف يظهر تلقائيا هنا"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:maxLines="6"
+                android:padding="10dp"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alqabas_regular"
+                android:text="يرجى أختيار نوع الـModel الذي تريده لتلخيص النص :"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+            <Spinner
+                android:id="@+id/spinner_SoundToText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:padding="10dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alqabas_bold"
+                android:paddingTop="15dp"
+                android:text="يرجى وضع عدد الجمل المهمة :"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/num_line_SoundToText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/alqabas_regular"
+                android:hint="عدد الجمل المهمة"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar_SoundToText"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border2"
+                android:fontFamily="@font/alqabas_regular"
+                android:onClick="goToSummText_SoundToText"
+                android:text="لخص الأن"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/ellipse"
+            android:onClick="speechRecognition"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="30dp"
+                android:src="@drawable/microphone" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
