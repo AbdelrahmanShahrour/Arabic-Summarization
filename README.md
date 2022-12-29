@@ -288,7 +288,32 @@ After the model had been pre-trained on a huge number of web-crawled texts, it w
 
 # 3 - System design
 ## 3.1 - Introduction
+In fact, the complexity of the Arabic language in terms of morphology and other aspects makes it difficult to build models that support it. From the recent past to the present, deep contextualized word embedding, especially BERT and its derivatives, have been demonstrated to function effectively in the NLP domain. We tried to take advantage of this feature to summarize the Arabic document.
+
+We used two different methods in this work. One is based on BART, which covers fine-tuning one of the Arabic models to accomplish the summarization task. As for the second, it is the use of one of the most successful ready-made fine-tuned models for summarizing which is PEGASUS.
+
+In the current chapter, we will provide an overview of the design architecture used to construct the abstractive Arabic text summarizer.
+
 ## 3.2 - Arabic text preprocessing
+
+The process of preparing and cleaning raw data from impurities such as unwanted characters and symbols in order to make it suitable for building and training machine learning models is known as data preprocessing. To prepare the raw text data, segmentation and normalization processes are applied. Text segmentation is where the text is divided into sentences or sentences are divided into words as needed. Normalization refers to reducing the orthographic variation. The several aspects of cleaning raw data that can be done include the following:
+
+* **Removing diacritics and kashidas from the Arabic text**: The diacritic is
+computationally expensive, but removing it increases the ambiguity of the text, especially for words with the same letters and different meanings such as ( جبن ) means cheese, and ( جبن ) means cowardice. However, this ambiguity does not constitute an obstacle in the case of using BERT, because it recognizes the intended meaning from the context of the sentence. As for deleting the kashidas, it is with the aim of returning the word to its natural form.
+
+* **Elimination of common misspellings** : These errors are made when replacing, for example, ( ى ) with ( ي ) or ( ة ) with ( ه ). To solve this problem, some people map all ( ي) to ( ى), ( ة) to ( ه) and change the different forms of the Arabic hamza (إ , آ , أ , ا) to one ( ا ).
+
+
+* **Stemming** : recover the main units of meaning. From a morphological point of view, some people prefer to return words to their original form, as they were before their conjugation, and remove the prefixes and suffixes from them. The word becomes a stem (or root).
+
+* **Other aspects of data preprocessing** : can be done as needed, such as removing HTML tags, punctuation, Latin letters, and URLs.
+
+* **Tokenization** : In the case of deep contextualized word representation, the raw text is incomprehensible to the model. It requires another process that converts the data into a format that it can understand. This process is called tokenization. It is the transformation of text data into numerical values by breaking text into tokens and converting tokens to their matching IDs in the pre-trained vocabulary.
+
+![image](https://miro.medium.com/max/640/1*fPneDs1pLKHB36VABL981Q.webp)
+
+## [Bibliography : Arabic text preprocessing](https://medium.com/@abdalrahman_shahrour/arabic-text-preprocessing-50367c32b21f)
+
 ## 3.3 - Text summarizer based on BART
 ### 3.3.1 - Model construction
 ### 3.3.1 - Prediction phase
