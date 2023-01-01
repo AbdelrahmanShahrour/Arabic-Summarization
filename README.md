@@ -325,7 +325,7 @@ The schematic below presents the general architecture of the text summarizer, sh
 
 The pre-trained model BART feeds on the data intended for training, occurs so-called fine-tuning, and is ready for summarization at this point. Then it sends test data into the summarizer to summarise its texts. The process is depicted in this Figure
 
-[image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Model%20construction%20process.png)
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Model%20construction%20process.png)
 ### fig name :  Model construction process
 
 * **Fine-tuning**
@@ -357,15 +357,10 @@ The second text summarizer that was suggested is based on google PEGASUS, and it
 
 This figure embodies the steps that the system follows to be able to perform the summarization of the Arabic document. Starting with the data, it is preprocessed and sent to the summarization process. Some sequential operations are applied to it to end it in the form of a summary.
 
-![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Diagram%20of%20text%20summarizer%20based%20on%20PEGASUS.png)
+![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/image.png)
 ### Diagram of text summarizer based on PEGASUS.
 
-* **Summarization process**
 
-To the best of our knowledge, PEGASUS does not support the Arabic language, so we took a way to summarize the Arabic document using it. We added two translation layers before and after the summarizer. Before accessing PEGASUS, the data must first pass through the first layer, where it is translated from Arabic to English, so that it becomes accepted by the summarizer. PEGASUS does its task by generating summaries as output, which are in turn inputs to the next translation layer. The summaries are translated and returned to the Arabic language. Figure 3.6 shows an overview of these steps.
-
-![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/Diagram%20of%20text%20summarizer%20based%20on%20PEGASUS.png)
-###  Diagram of text summarizer based on PEGASUS
 
 
 ---
