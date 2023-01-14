@@ -358,4 +358,4 @@ The second text summarizer that was suggested is based on google PEGASUS, and it
 This figure embodies the steps that the system follows to be able to perform the summarization of the Arabic document. Starting with the data, it is preprocessed and sent to the summarization process. Some sequential operations are applied to it to end it in the form of a summary.
 
 ![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/image.png)
-### Diagram of text summarizer based on PEGASUS.
+### Diagram of text summarizer based on PEGASUS
