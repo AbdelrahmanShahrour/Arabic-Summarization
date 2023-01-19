@@ -60,7 +60,7 @@ An encoding is a method of representing the symbols in a script in a consistent 
 # ISO-8859-6
 # CP-1256
 
-
+ 
 **Unicode**
 In order to accommodate the non-english characters, people started going a little crazy on how to use the numbers from 128 to 255 still available on a single byte. Different people would use different characters for the same numbers. Obviously, not only was it the wild wild west, but it quickly dawned that the extra available numbers could not even come close to represent the complete set of characters for some languages.
 
