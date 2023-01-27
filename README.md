@@ -359,4 +359,3 @@ This figure embodies the steps that the system follows to be able to perform the
 
 ![image](https://github.com/AbdelrahmanShahrour/Arabic-Summarization/blob/main/images/image.png)
 ### Diagram of text summarizer based on PEGASUS
-
